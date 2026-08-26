@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED: Riesgos en Procesos de Manufactura y Normas de Seguridad | USC</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #1b4f72;
+            --accent: #e74c3c;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #2b2b2b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: var(--secondary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: block;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--accent);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .media-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            background: #000;
+        }
+
+        .media-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-action:hover {
+            background-color: #c0392b;
+        }
+
+        /* OVA Simulator styling */
+        .simulator-box {
+            background-color: #eef5fc;
+            border: 2px dashed var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: var(--secondary);
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .result-box {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            nav ul { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Laboratorio de Procesos: Riesgos en Manufactura y Normas de Seguridad</h1>
+        <p>Universidad Santiago de Cali — Programa de Ingeniería Industrial</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#presentacion">Presentación e IA</a></li>
+            <li><a href="#podcast">Podcast</a></li>
+            <li><a href="#video">Video Demostrativo</a></li>
+            <li><a href="#ova">OVA Método Fine</a></li>
+            <li><a href="#evaluacion">Cuestionario</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentacion" class="card">
+            <h2>1. Presentación Interactiva (Generada con IA)</h2>
+            <p>Explore las diapositivas y el contenido interactivo referente a los principios de prevención intrínseca, resguardos en maquinaria, volúmenes mínimos de trabajo (10 m³ por operario) y normas institucionales del laboratorio.</p>
+            <div class="media-container">
+                <iframe src="https://notebook.google.com/notebook/0750797d-9ffc-4e15-8357-d4fe6a0c87bd/artifact/5673a542-e5a8-4b64-ba59-04a6c228f0e7" title="Presentación Interactiva IA"></iframe>
+            </div>
+        </section>
+
+        <section id="podcast" class="card">
+            <h2>2. Podcast Educativo: Anatomía del Riesgo Industrial</h2>
+            <p>Escuche el episodio especializado sobre la física de los accidentes con herramientas manuales y mecánicas, los factores de sobreconfianza y la importancia de la modelación matemática en la prevención.</p>
+            <div style="margin: 1.5rem 0;">
+                <audio controls style="width: 100%;">
+                    <source src="podcast_seguridad_industrial.mp3" type="audio/mpeg">
+                    Su navegador no soporta el elemento de audio HTML5.
+                </audio>
+            </div>
+        </section>
+
+        <section id="video" class="card">
+            <h2>3. Video Ilustrativo: Inspección y Protección Colectiva</h2>
+            <p>Visualice los protocolos prácticos para la utilización adecuada de Equipos de Protección Individual (EPI), señalética de taller e inspección previa de herramientas a motor.</p>
+            <div class="media-container">
+                <iframe src="https://notebook.google.com/notebook/0750797d-9ffc-4e15-8357-d4fe6a0c87bd/artifact/c645095e-aacb-4714-8f2b-c4467ca70838" title="Video de Seguridad Industrial"></iframe>
+            </div>
+        </section>
+
+        <section id="ova" class="card">
+            <h2>4. Objeto Virtual de Aprendizaje (OVA): Calculadora del Método Fine (1971)</h2>
+            <p>Este simulador interactivo permite evaluar cuantitativamente el <strong>Grado de Peligrosidad (GP)</strong> de un riesgo identificado en la celda de manufactura a través de la fórmula:</p>
+            <p style="text-align: center; font-size: 1.2rem; font-weight: bold; margin: 10px 0; color: var(--accent);">
+                GP = Consecuencia (C) × Exposición (E) × Probabilidad (P)
+            </p>
+
+            <div class="simulator-box">
+                <div class="form-group">
+                    <label for="consecuencia">Consecuencia (C):</label>
+                    <select id="consecuencia">
+                        <option value="1">1 — Lesión leve o magulladura</option>
+                        <option value="5">5 — Lesión con baja médica</option>
+                        <option value="15">15 — Lesión grave permanente / Amputación</option>
+                        <option value="25">25 — Fatalidad / Una muerte</option>
+                        <option value="100">100 — Catástrofe / Varias muertes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exposicion">Exposición (E):</label>
+                    <select id="exposicion">
+                        <option value="1">1 — Remota / Ocasional</option>
+                        <option value="3">3 — Poco frecuente (mensual)</option>
+                        <option value="6">6 — Frecuente (diaria)</option>
+                        <option value="10">10 — Continua durante la jornada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="probabilidad">Probabilidad (P):</label>
+                    <select id="probabilidad">
+                        <option value="1">1 — Rara o casi imposible</option>
+                        <option value="3">3 — Poco posible pero ha ocurrido</option>
+                        <option value="6">6 — Es una coincidencia esperada</option>
+                        <option value="10">10 — Resultado casi seguro / Inminente</option>
+                    </select>
+                </div>
+
+                <button class="btn-action" onclick="calcularGP()">Calcular Grado de Peligrosidad</button>
+
+                <div id="resultado" class="result-box"></div>
+            </div>
+        </section>
+
+        <section id="evaluacion" class="card">
+            <h2>5. Cuestionario de Evaluación Sumativa</h2>
+            <p>Acceda al cuestionario oficial en línea para validar sus conocimientos teóricos y prácticos sobre el módulo de seguridad industrial.</p>
+            <a href="https://notebook.google.com/notebook/0750797d-9ffc-4e15-8357-d4fe6a0c87bd/artifact/c59959da-6f0d-4545-a02d-28cda60a895f" target="_blank" class="btn-action">Iniciar Cuestionario en Línea</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Universidad Santiago de Cali — Diplomado en Docencia Universitaria para EVA</p>
+    </footer>
+
+    <script>
+        function calcularGP() {
+            const c = parseFloat(document.getElementById('consecuencia').value);
+            const e = parseFloat(document.getElementById('exposicion').value);
+            const p = parseFloat(document.getElementById('probabilidad').value);
+
+            const gp = c * e * p;
+            const resBox = document.getElementById('resultado');
+            resBox.style.display = 'block';
+
+            let interpretacion = '';
+            let colorBg = '';
+
+            if (gp > 300) {
+                interpretacion = `GP = ${gp} — RIESGO GRAVE: Requiere corrección inmediata. Se debe considerar la suspensión de la actividad hasta corregir la amenaza.`;
+                colorBg = '#f8d7da';
+                resBox.style.color = '#721c24';
+            } else if (gp > 200) {
+                interpretacion = `GP = ${gp} — RIESGO ALTO: Se requiere intervención urgente dentro de las siguientes 24 a 48 horas.`;
+                colorBg = '#fff3cd';
+                resBox.style.color = '#856404';
+            } else if (gp > 85) {
+                interpretacion = `GP = ${gp} — RIESGO MODERADO: Debe ser corregido en la programación regular de mantenimiento preventivo.`;
+                colorBg = '#d1ecf1';
+                resBox.style.color = '#0c5460';
+            } else {
+                interpretacion = `GP = ${gp} — RIESGO TOLERABLE: Riesgo aceptable bajo control preventivo actual.`;
+                colorBg = '#d4edda';
+                resBox.style.color = '#155724';
+            }
+
+            resBox.style.backgroundColor = colorBg;
+            resBox.innerHTML = interpretacion;
+        }
+    </script>
+</body>
+</html>
